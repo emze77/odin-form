@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Odin Form</title>
+</head>
+<body>
+<main>
+    <section class="row" id="imgColumn">
+        <img src="assets/img/halie-west-25xggax4bSA-unsplash.jpg" alt="green leaf" id="backgroundImg">
+        <div class="logoContainer">
+
+        </div>
+        <div id="imgCaption">
+
+        </div>
+    </section>
+    <section class="row" id="formColumn">
+        <div class="textContainer">
+            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</p>
+            <p>You <i>know</i> you want to.</p>
+        </div>
+        <form id="inputForm">
+            <fieldset id="personalData">
+                <legend>Let's do this!</legend>
+                <div class="dataRow" id="dataRow1">
+                    <div class="formContainer" id="firstNameContainer">
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName">
+                    </div>
+                    <div class="formContainer" id="lastNameContainer">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName">
+                    </div>
+                </div>
+                <div class="dataRow" id="dataRow2">
+                    <div class="formContainer" id="mailContainer">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="formContainer" id="phoneContainer">    
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="number" name="phoneNumber" id="phoneNumber">
+                    </div>
+                </div>
+                <div class="dataRow" id="dataRow3">
+                    <div class="formContainer" id="passwordContainer">    
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div class="formContainer" id="passwordConfirmationContainer">
+                        <label for="passwordConfirmation">Confirm Password</label>
+                        <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+                    </div>  
+                </div>
+            </fieldset>
+            <button type="submit">Create Account</button>
+        </form>
+        <div>
+            <p>Already have an account? <a>Log in</a></p>
+        </div>
+    </section>
+</main>
+</body>
+</html>
