@@ -14,7 +14,8 @@
 
         </div>
         <div id="imgCaption">
-
+            <img src="assets/img/odin-lined.png" alt="logo of 'the odin project'">
+            <p>ODIN</p>
         </div>
     </section>
     <section class="row" id="formColumn">
@@ -22,7 +23,7 @@
             <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</p>
             <p>You <i>know</i> you want to.</p>
         </div>
-        <form id="inputForm">
+        <form id="inputForm" method="post" >
             <fieldset id="personalData">
                 <legend>Let's do this!</legend>
                 <div class="dataRow" id="dataRow1">
@@ -37,31 +38,33 @@
                 </div>
                 <div class="dataRow" id="dataRow2">
                     <div class="formContainer" id="mailContainer">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" id="email" required>
                     </div>
                     <div class="formContainer" id="phoneContainer">    
                         <label for="phoneNumber">Phone Number</label>
-                        <input type="number" name="phoneNumber" id="phoneNumber">
+                        <input type="text" name="phoneNumber" id="phoneNumber">
                     </div>
+                    <!-- (^\+?[\d\s\-().]{6,}[\d]$|^[\d\s\-().]{6,}[\d]$) -->
                 </div>
                 <div class="dataRow" id="dataRow3">
                     <div class="formContainer" id="passwordContainer">    
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                        <label for="password">Password*</label>
+                        <input type="password" name="password" id="password" pattern=".{8,}" title="Please enter a valid zip code, example: 65251" required>
                     </div>
                     <div class="formContainer" id="passwordConfirmationContainer">
-                        <label for="passwordConfirmation">Confirm Password</label>
-                        <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+                        <label for="passwordConfirmation">Confirm Password*</label>
+                        <input type="password" class="redBorder" name="passwordConfirmation" id="passwordConfirmation" title="passwords must be equal.">
                     </div>  
                 </div>
             </fieldset>
             <button type="submit">Create Account</button>
         </form>
         <div>
-            <p>Already have an account? <a>Log in</a></p>
+            <p id="hasAccount">Already have an account? <a>Log in</a></p>
         </div>
     </section>
 </main>
+<script src="script.js"></script>
 </body>
 </html>

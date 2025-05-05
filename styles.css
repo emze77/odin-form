@@ -9,9 +9,18 @@
 
 
 :root {
-    --text-padding-left: 30px;
-    font-family: "Norse";
+    --text-padding-left: 50px;
+    --text-padding-right: 20%;
+    --color-green: #618f54;
+    --color-red: #8f5454;
+    --color-blue: #545e8f;
+    font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif; 
+    font-size: 22px;
 }
+
+input {
+    all: unset;
+  }
 
 html {
     width: 100%;
@@ -21,59 +30,150 @@ html {
 main {
     display: flex;
     flex-direction: row;
-    align-items: space-around;
+    
 
     & section {
         height: 100vh;
     }
 
     & > #imgColumn {
+        position: relative;
         flex: 1;
+
+        & img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%
+        }
+
+        & #imgCaption {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 30%;
+            background-color: rgba(0, 0, 0, 0.376);
+            height: 15%;
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            & > img {
+                width: 18%;
+                object-fit: scale-down;
+                /* border: 2px solid red; */
+            }
+
+            & p {
+                color: white;
+                font-family: Norse;
+                font-size: 5rem;
+            }
+        }
     }
 
     & > #formColumn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         flex: 2;
         background-color: rgb(219, 232, 243);
 
-        & fieldset {
-            width: 100%;
-            padding: 0;
-            margin: 0 0;
-            background-color: white;
+        & .textContainer {
+            font-weight: 500;
+        }
+        
+        & p, legend {
+            padding-left: var(--text-padding-left);
+            padding-right: var(--text-padding-right)
         }
 
-        & .dataRow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3%;
-            padding: 10px 0;
+        & fieldset {
+            width: 100%;
+            padding-bottom: 30px;
+            margin: 0;
+            background-color: white;
+            border: none;
+            padding-left: var(--text-padding-left);
+
+            & legend {
+                position: relative;
+                padding-left: 0;
+                top: 55px;
+                font-size: 1.2rem;
+                padding-bottom: 50px;
+                font-weight: 200;
+            }
+
+            & label {
+                font-size: 0.6rem;
+                text-transform: uppercase;
+                font-weight: 300;
+            }
+
+            & .dataRow {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5%;
+                padding: 10px 0;
+
+                & .formContainer {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    /* margin-right: 20px; */
+                    width: clamp(150px, 40%, 350px);
+    
+                    & input {
+                        display: block;
+                        width: 100%;
+                        line-height: 1.8rem;
+                        font-size: 0.9rem;
+                        padding-left: 10px;
+                        border-radius: 15px;
+                    }
+
+                    & input:focus {
+                        border: 3px solid var(--color-blue);
+                    }
+                    
+                    & #email:valid, #password:valid {
+                        border: 3px solid var(--color-green);
+                    }
+
+                    & #email:invalid, #password:invalid {
+                        border: 3px solid var(--color-red);
+                    }
+                    
+                }
+            }
+        }
+
+        & > form > button {
+            margin-left: var(--text-padding-left);
+            margin-top: 30px;
+            padding: 12px 7%;
+            border-radius: 10px;
+            background-color: var(--color-green);
+            color: white;
+            font-weight: 700;
+            border: white;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.396);
+        }
+
+        & #hasAccount {
+            font-size: 0.8rem;
         }
     }
 }
 
 input {
-    display: block;
-    width: 160px;
-    /* width: 40%; */
+    border: 3px solid grey;
 }
 
-p, .formContainer, legend {
-    padding-left: var(--text-padding-left);
+.greenBorder {
+    border: 3px solid var(--color-green);
 }
 
-button {
-    margin-left: var(--text-padding-left);
-    margin-top: 20px;
-}
-
-/* #formColumn, #inputForm {
-    display: flex;
-    flex-direction: column;
-
-} */
-
-img {
-    width: 100%;
-    object-fit: cover;
-    height: 100%
+.redBorder {
+    border: 3px solid var(--color-red);
 }
